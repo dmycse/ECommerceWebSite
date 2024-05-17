@@ -1,3 +1,11 @@
+export const menuItems = [
+    'Home',
+    'Categories',
+    'Products',
+    'About Us',
+    'Contact Us'
+  ];
+
 export const products = [
   {
       id: 1,
