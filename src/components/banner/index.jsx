@@ -1,5 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import { BannerContainer, BannerContent, BannerDescription, BannerImage, BannerTitle } from "../../styles/banner";
+import { BannerContainer, BannerContent, BannerDescription, BannerImage, BannerShopButton, BannerTitle } from "../../styles/banner";
 
 
 function Banner() {
@@ -18,6 +18,7 @@ function Banner() {
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
           Exercitationem ex delectus fuga dicta voluptatibus cum impedit.
         </BannerDescription>
+        <BannerShopButton color='primary'>Shop Now</BannerShopButton>
       </BannerContent>
     </BannerContainer>
   )
