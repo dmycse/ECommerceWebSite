@@ -1,4 +1,6 @@
-import { styled, Box, Stack, Typography, List, ListItemIcon } from "@mui/material";
+import { styled, Box, Stack, Typography, List, ListItemIcon, IconButton } from "@mui/material";
+import { DrawerWidth } from "../theme";
+
 import "@fontsource/montez";
 
 import { Colors } from "../theme";
@@ -13,7 +15,9 @@ export const HeaderContainer = styled(Stack)({
 });
 
 // header
-export const HeaderTitle = styled(Typography)(({matches, theme}) => ({
+export const HeaderTitle = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== "matches"
+})(({matches, theme}) => ({
   padding: '4px',
   flexGrow: 1,
 
@@ -22,7 +26,7 @@ export const HeaderTitle = styled(Typography)(({matches, theme}) => ({
   
   color: Colors.secondary,
 
-  [theme.breakpoints.down("md")]: {
+  [theme.breakpoints.down("lg")]: {
     textAlign: 'center',
     }
   // textAlign can be done like that
@@ -40,7 +44,9 @@ export const HeaderList = styled(List)(({ type }) => ({
   alignItems: 'center',
 }));
 
-export const HeaderItemIcon = styled(ListItemIcon)(({matches}) => ({
+export const HeaderItemIcon = styled(ListItemIcon, {
+  shouldForwardProp: (prop) => prop !== "matches"
+})(({matches}) => ({
   display: 'flex', 
   justifyContent: 'center',
   color: matches && Colors.secondary
@@ -81,4 +87,11 @@ export const HeaderActionsIconsContainer = styled(Box)(({theme}) => ({
     background: Colors.shaft,
     borderTop: `1px solid ${Colors.border}`
   }
+}));
+
+export const DrawerCloseButton = styled(IconButton)(() => ({
+  position: 'absolute',
+  top: 10,
+  left: DrawerWidth,
+  zIndex: 1999,      
 }));

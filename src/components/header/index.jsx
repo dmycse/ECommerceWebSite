@@ -6,13 +6,13 @@ import HeaderDesktop from './headerDesktop';
 function Header() {
 
   let theme = useTheme();
-  let matches = useMediaQuery(theme.breakpoints.down('md'));
+  let matches = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <>
       {matches 
-        ? <HeaderMobile matches={+matches} /> 
-        : <HeaderDesktop matches={+matches}/>
+        ? <HeaderMobile matches={matches} /> 
+        : <HeaderDesktop matches={matches}/>
       }
     </>
   )
